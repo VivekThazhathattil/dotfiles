@@ -1,0 +1,143 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/share/i3blocks/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+#[gen_name]
+#command=~/.config/i3/scripts/gen_name.sh
+#interval=100
+#align=left
+#color=#f5d300
+
+[bandwidth]
+command=~/.config/i3/scripts/bandwidth.sh
+#instance=eth0
+color=#33AA00
+interval=1
+
+[start_pomodoro]
+full_text=
+interval=once
+command= if [ $BLOCK_BUTTON -eq 1 ]; then notify-send "$(start_pomo )"; fi;
+color=#00FF9F
+
+[end_pomodoro]
+full_text=
+interval=once
+command= if [ $BLOCK_BUTTON -eq 1 ]; then notify-send "$(cancel_pomo)"; fi;
+color=#D600FF
+
+[mpd]
+command=~/.config/i3/scripts/mpd.sh
+interval=1
+color=#BFD641
+
+[pomo]
+command=/home/tvivek/Downloads/pom/pomodoro-master/pomo_state.py
+interval=1
+color=#6B5B95
+
+[wireless]
+command=~/.config/i3/scripts/wifi.sh
+interval=5
+color=#FF99FE
+#color=#F1EA7F
+
+
+[volume]
+command=~/.config/i3/scripts/volume.sh
+label=♪ 
+interval=1
+signal=10
+color=#00B8FF
+
+[Temperature]
+command=~/.config/i3/scripts/temp.sh
+interval=10
+#color=#d9534f
+color=#ea3870
+
+[brightness]
+command=~/.config/i3/scripts/brightness.sh
+interval=1
+color=#39cccc
+
+[disk]
+command=~/.config/i3/scripts/disk.sh
+interval=60
+color=#E3E1F3
+
+[battery]
+command=~/.config/i3/scripts/battery.sh
+interval=10
+color=#FFDC00
+
+[time]
+label=
+command=echo " $(date '+%Y-%m-%d %a %H:%M')"
+interval=60
+#color=#2ECC40
+color=#6bcb9e
+
+# Fancy text with multiple colors and shapes
+[funky]
+align=center
+full_text=<span foreground="orange" underline="low" weight="ultrabold">𝒱𝒾𝓋𝑒𝓀    </span>
+markup=pango
+
+# press this button to clear the current i3blocks page and view the next one
+#[next-page]
+#full_text=
+#interval=once
+#command= if [ $BLOCK_BUTTON -eq 1 ]; then ; fi;
+#color=
+
+# Generic media player support
+#
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+#[mediaplayer]
+#instance=spotify
+#interval=5
+#signal=10
+
+# Key indicators
+#
+# Add the following bindings to i3 config file:
+#
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+#[keyindicator]
+#instance=CAPS
+#interval=once
+#signal=11
+
+#[keyindicator]
+#instance=NUM
+#interval=once
+#signal=11
