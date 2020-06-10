@@ -48,16 +48,27 @@ bindsym $mod+d exec rofi -combi-modi window#drun#ssh -theme solarized -font "hac
 set $feh exec --no-startup-id feh --bg-scale
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+#bindsym $mod+h focus left
+#bindsym $mod+j focus down
+#bindsym $mod+k focus up
+#bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+
+# checking if switching containers in fullscreen mode works
+bindsym $mod+Left exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus left\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus left\\"; fi"
+bindsym $mod+Down exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus down\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus down\\"; fi"
+bindsym $mod+UP exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus up\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus up\\"; fi"
+bindsym $mod+Right exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus right\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus right\\"; fi"
+
+bindsym $mod+h exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus left\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus left\\"; fi"
+bindsym $mod+j exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus down\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus down\\"; fi"
+bindsym $mod+k exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus up\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus up\\"; fi"
+bindsym $mod+l exec "FOCUSED=$(xprop -root _NET_ACTIVE_WINDOW | awk -F' ' '{print $NF}'); if xprop -id ${FOCUSED} _NET_WM_STATE | grep -q _NET_WM_STATE_FULLSCREEN; then i3-msg \\"[id=${FOCUSED}] fullscreen disable\\"; i3-msg \\"focus right\\"; i3-msg \\"fullscreen enable\\"; else i3-msg \\"focus right\\"; fi"
 
 # move focused window
 bindsym $mod+Shift+j move left

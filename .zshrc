@@ -69,7 +69,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -109,3 +109,9 @@ alias ofoam="source ${FOAM_INST_DIR}/OpenFOAM-7/etc/bashrc"
 
 export cdiff=/home/tvivek/study/iisc/ae299/cantera_interface_with_MultiSolv/MultiSolv_copy/MultiSolv-testing/solvers/3Dparallel/CDIFF3D
 export GIT_EDITOR=vim
+export PATH=/mnt/sandisk/android-studio/bin:$PATH
+
+#export PYTHONPATH=/mnt/sandisk/experimental_extra/pip_pkgs/:$PYTHONPATH
+export PYTHONPATH=/mnt/sandisk/experimental_extra/pip_pkgs/pygame_gui:$PYTHONPATH
+alias godot=/mnt/sandisk/godot/Godot_v3.2.1-stable_x11.64
+export ANDROID_HOME=/home/tvivek/Android/Sdk

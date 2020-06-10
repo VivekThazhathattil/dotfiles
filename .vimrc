@@ -46,6 +46,8 @@ filetype plugin indent on    " required
 :set directory=$HOME/.vim/swap//
 :set backupdir=$HOME/.vim/backups//
 
+:set noswapfile
+
 " For mapping compile command for c programs
  map <C-E> :w <CR> :!g++ % -o %< && ./%< <CR>
 " autocmd filetype cpp nnoremap <F5> :w <CR> :!make all<CR>
