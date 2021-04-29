@@ -9,6 +9,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'prabirshrestha/asyncomplete.vim'
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+nnoremap H gT
+nnoremap L gt
+
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -59,4 +68,5 @@ syntax on
 nnoremap <buffer> <C-T> :exec '!python' shellescape(@%, 1)<cr>
 
 " Enable line numbering
-:set number
+:set nonumber
+:set clipboard=unnamedplus
