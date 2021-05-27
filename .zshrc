@@ -102,6 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls-time="ls -clth"
+alias u="urxvt&"
+alias g="grep -rn --exclude=tags"
 export XDG_CONFIG_HOME=/home/tvivek/.config
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 

@@ -68,5 +68,8 @@ syntax on
 nnoremap <buffer> <C-T> :exec '!python' shellescape(@%, 1)<cr>
 
 " Enable line numbering
-:set nonumber
+"  :set nonumber
+:set number
 :set clipboard=unnamedplus
+":set autoindent
+":set smartindent
