@@ -73,3 +73,6 @@ nnoremap <buffer> <C-T> :exec '!python' shellescape(@%, 1)<cr>
 :set clipboard=unnamedplus
 ":set autoindent
 ":set smartindent
+"
+:set tabstop=2
+:set shiftwidth=2

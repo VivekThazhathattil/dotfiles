@@ -101,9 +101,33 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
 alias ls-time="ls -clth"
+alias lsnew="ls -ltch | head"
 alias u="urxvt&"
 alias g="grep -rn --exclude=tags --exclude-dir={git,po,build}"
+alias WORK="cd /mnt/sda_12/projects"
+alias XPP="cd /mnt/sda_12/projects/forks/xournalpp"
+alias CLONES="cd /mnt/sda_12/projects/clones"
+alias FORKS="cd /mnt/sda_12/projects/forks"
+alias HP="cd /mnt/sda_12/projects/original/sites/homepage"
+alias ORIG="cd /mnt/sda_12/projects/original"
+alias GODOT="cd /mnt/sandisk/godot"
+alias XPP="cd /mnt/sda_12/projects/forks/xournalpp"
+alias vscode="/mnt/sda_12/VSCode-linux-x64/code"
+alias blog="/mnt/sda_12/projects/original/sites/new_blog/blog"
+
+alias popChess="/mnt/sda_12/projects/original/popChess"
+
+alias quickcp="xclip -sel clip" # piped to this cmd; Eg: cat Makefile | quickcp
+alias mem="cd /home/tvivek/experimental/random_shellscripts/memory"
+
+#alias xournalpp="/home/tvivek/Downloads/xournalpp-1.1.0.dev-nightly.20210717-x86_64.AppImage"
+alias zoom="/home/tvivek/Downloads/zoom_x86_64.pkg.tar/opt/zoom/ZoomLauncher"
+alias CP="cd /mnt/sda_12/praveen"
+alias MRB="cd /mnt/sda_12/must_read_books"
+alias SCICOMP="cd /mnt/sda_12/sci_comp/"
+
 export XDG_CONFIG_HOME=/home/tvivek/.config
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
@@ -118,9 +142,11 @@ bashcompinit
 export FOAM_INST_DIR=/opt/OpenFOAM
 alias ofoam="source ${FOAM_INST_DIR}/OpenFOAM-7/etc/bashrc"
 
+source /usr/local/bin/setup_cantera
 export cdiff=/home/tvivek/study/iisc/ae299/cantera_interface_with_MultiSolv/MultiSolv_copy/MultiSolv-testing/solvers/3Dparallel/CDIFF3D
 export GIT_EDITOR=vim
 export PATH=/mnt/sandisk/android-studio/bin:$PATH
+export PATH=/mnt/sda_12/fdroid_stuff/fdroidserver:$PATH
 
 #export PYTHONPATH=/mnt/sandisk/experimental_extra/pip_pkgs/:$PYTHONPATH
 export PYTHONPATH=/mnt/sandisk/experimental_extra/pip_pkgs/pygame_gui:$PYTHONPATH
